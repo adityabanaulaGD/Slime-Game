@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjd60dimqlrn"]
+
+[ext_resource type="Script" path="res://Scenes/Components/health_component.gd" id="1_gn6j0"]
+[ext_resource type="FontFile" uid="uid://ccgqaxgxw017d" path="res://Assets/fonts/PixelOperator8.ttf" id="2_hii6r"]
+
+[node name="HealthComponent" type="Node2D"]
+script = ExtResource("1_gn6j0")
+
+[node name="HP" type="Label" parent="."]
+offset_right = 82.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("2_hii6r")
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 83.0
+offset_bottom = 27.0
+max_value = 3.0
+step = 1.0
+fill_mode = 1
+show_percentage = false

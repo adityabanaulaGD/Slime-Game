@@ -1,0 +1,189 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgtsv7j06vjgb"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_0sik8"]
+[ext_resource type="Texture2D" uid="uid://1fay67fcs1wa" path="res://Assets/World/GrassBackground.png" id="1_t8gik"]
+[ext_resource type="Texture2D" uid="uid://chjrrih2sctaj" path="res://Assets/World/Tree.png" id="2_y12eg"]
+[ext_resource type="Texture2D" uid="uid://cf7pr67jjbaf7" path="res://Assets/World/Bush.png" id="3_ug4ou"]
+[ext_resource type="Texture2D" uid="uid://ge35cxc3ouhy" path="res://Assets/World/Grass.png" id="4_ud8c6"]
+[ext_resource type="FontFile" uid="uid://coxmks4rtwgff" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="5_tjk17"]
+[ext_resource type="FontFile" uid="uid://ccgqaxgxw017d" path="res://Assets/fonts/PixelOperator8.ttf" id="6_cxqqi"]
+[ext_resource type="PackedScene" uid="uid://ec1yad2em3su" path="res://Scenes/slime_menu.tscn" id="7_h0n0v"]
+[ext_resource type="AudioStream" uid="uid://d07kqd3im170s" path="res://Assets/sound/tap.wav" id="9_ldrta"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_0sik8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ldrta")
+pitch_scale = 2.0
+bus = &"Sfx"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 326)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="Node" parent="CanvasLayer"]
+
+[node name="grass" type="TextureRect" parent="CanvasLayer/background"]
+offset_left = -8.0
+offset_right = 1920.0
+offset_bottom = 1096.0
+texture = ExtResource("1_t8gik")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="tree" type="TextureRect" parent="CanvasLayer/background"]
+offset_left = 1645.0
+offset_top = 89.0
+offset_right = 1811.0
+offset_bottom = 360.0
+texture = ExtResource("2_y12eg")
+
+[node name="bushes" type="Node" parent="CanvasLayer/background"]
+
+[node name="Bush" type="TextureRect" parent="CanvasLayer/background/bushes"]
+offset_left = 1044.0
+offset_top = 210.0
+offset_right = 1189.0
+offset_bottom = 324.0
+texture = ExtResource("3_ug4ou")
+
+[node name="bush" type="TextureRect" parent="CanvasLayer/background/bushes"]
+offset_left = 1258.0
+offset_top = 109.0
+offset_right = 1403.0
+offset_bottom = 223.0
+texture = ExtResource("3_ug4ou")
+
+[node name="bush3" type="TextureRect" parent="CanvasLayer/background/bushes"]
+offset_left = 1504.0
+offset_top = 871.0
+offset_right = 1649.0
+offset_bottom = 997.0
+texture = ExtResource("3_ug4ou")
+
+[node name="bush2" type="TextureRect" parent="CanvasLayer/background/bushes"]
+offset_left = 1626.0
+offset_top = 553.0
+offset_right = 1771.0
+offset_bottom = 679.0
+texture = ExtResource("3_ug4ou")
+
+[node name="grasses" type="Node" parent="CanvasLayer/background"]
+
+[node name="grass2" type="TextureRect" parent="CanvasLayer/background/grasses"]
+offset_left = 1149.0
+offset_top = 50.0
+offset_right = 1291.0
+offset_bottom = 162.0
+texture = ExtResource("4_ud8c6")
+
+[node name="grass3" type="TextureRect" parent="CanvasLayer/background/grasses"]
+offset_left = 1204.0
+offset_top = 626.0
+offset_right = 1346.0
+offset_bottom = 738.0
+texture = ExtResource("4_ud8c6")
+
+[node name="grass4" type="TextureRect" parent="CanvasLayer/background/grasses"]
+offset_left = 924.0
+offset_top = 482.0
+offset_right = 1066.0
+offset_bottom = 594.0
+texture = ExtResource("4_ud8c6")
+
+[node name="grass5" type="TextureRect" parent="CanvasLayer/background/grasses"]
+offset_left = 1419.0
+offset_top = 285.0
+offset_right = 1561.0
+offset_bottom = 397.0
+texture = ExtResource("4_ud8c6")
+
+[node name="grass6" type="TextureRect" parent="CanvasLayer/background/grasses"]
+offset_left = 1712.0
+offset_top = 793.0
+offset_right = 1869.0
+offset_bottom = 926.0
+texture = ExtResource("4_ud8c6")
+
+[node name="grass7" type="TextureRect" parent="CanvasLayer/background/grasses"]
+offset_left = 995.0
+offset_top = 806.0
+offset_right = 1137.0
+offset_bottom = 918.0
+texture = ExtResource("4_ud8c6")
+
+[node name="Game Name" type="Label" parent="CanvasLayer"]
+z_index = 5
+offset_left = 230.0
+offset_top = 120.0
+offset_right = 724.0
+offset_bottom = 267.0
+theme_override_fonts/font = ExtResource("5_tjk17")
+theme_override_font_sizes/font_size = 48
+text = "Slime Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+z_index = 5
+offset_left = 230.0
+offset_top = 380.0
+offset_right = 530.0
+offset_bottom = 455.0
+scale = Vector2(1.25, 1.25)
+theme_override_colors/icon_normal_color = Color(0.317442, 0.465896, 0.782344, 1)
+theme_override_colors/icon_pressed_color = Color(0.321748, 0.83479, 0.386276, 1)
+theme_override_colors/icon_hover_color = Color(0.173798, 0.464261, 0.419168, 1)
+theme_override_fonts/font = ExtResource("6_cxqqi")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="Controls" type="Button" parent="CanvasLayer"]
+z_index = 5
+offset_left = 230.0
+offset_top = 550.0
+offset_right = 530.0
+offset_bottom = 625.0
+scale = Vector2(1.25, 1.25)
+theme_override_colors/icon_normal_color = Color(0.317442, 0.465896, 0.782344, 1)
+theme_override_colors/icon_pressed_color = Color(0.321748, 0.83479, 0.386276, 1)
+theme_override_colors/icon_hover_color = Color(0.173798, 0.464261, 0.419168, 1)
+theme_override_fonts/font = ExtResource("6_cxqqi")
+theme_override_font_sizes/font_size = 24
+text = "Controls"
+
+[node name="Quit" type="Button" parent="CanvasLayer"]
+z_index = 5
+offset_left = 230.0
+offset_top = 720.0
+offset_right = 530.0
+offset_bottom = 795.0
+scale = Vector2(1.25, 1.25)
+theme_override_colors/icon_normal_color = Color(0.317442, 0.465896, 0.782344, 1)
+theme_override_colors/icon_pressed_color = Color(0.321748, 0.83479, 0.386276, 1)
+theme_override_colors/icon_hover_color = Color(0.173798, 0.464261, 0.419168, 1)
+theme_override_fonts/font = ExtResource("6_cxqqi")
+theme_override_font_sizes/font_size = 24
+text = "Quit
+"
+
+[node name="SlimeMenu" parent="CanvasLayer" instance=ExtResource("7_h0n0v")]
+z_index = 5
+position = Vector2(1453, 622)
+
+[node name="SlimeMenu2" parent="CanvasLayer" instance=ExtResource("7_h0n0v")]
+z_index = 5
+position = Vector2(1320, 842)
+
+[node name="SlimeMenu3" parent="CanvasLayer" instance=ExtResource("7_h0n0v")]
+z_index = 5
+position = Vector2(1322, 473)
+
+[connection signal="button_down" from="CanvasLayer/Play" to="." method="_on_play_button_down"]
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="button_down" from="CanvasLayer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
